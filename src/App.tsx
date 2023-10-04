@@ -1,21 +1,40 @@
 import "./App.css";
+import { useState } from "react";
 import { Button, Input } from "./Component";
 
 function App() {
+  const intialValues = {
+    firstName: "",
+    secondName: "",
+    age: 0,
+  };
+  const [input, setInput] = useState(intialValues);
+  function handleChange{(e)=> 
+    setInput(...input,)[e.target.name]:else.target.value};
   return (
     <div className="App">
       <header className="App-header">
         <Input
-          name="First Name"
+          name="firstName"
           type="text"
-          placeholder="Enter your First name"
+          label="Enter your First Name"
+          placeholder="your First name"
+          onChange={handleChange}
         />
         <Input
-          name="Second Name"
+          name="secondName"
           type="text"
-          placeholder="Enter your Second name"
+          label="Enter your Second Name"
+          placeholder="your Second name"
+          onChange={handleChange}
         />
-        <Input name="Your Age" type="number" placeholder="Enter your age" />
+        <Input
+          name="Your Age"
+          type="number"
+          label="Enter your Age"
+          placeholder="your age"
+          onChange={handleChange}
+        />
 
         <Button />
       </header>
